@@ -76,7 +76,7 @@ while True:
     introTemplate = "{0} {1} {2}《{3}》{4}："
 
     print(introTemplate.format(iFrom, "古董电脑室",
-                               haveASee, article['title'], ifound))
+                               haveASee, article['title'], ifound), end="\r\n", flush=True)
 
     while(len(screenText) < 840):
         noun1 = random.choice(nounlist)
@@ -98,8 +98,8 @@ while True:
 
         seperators = ['', '，', '，', '，', '。', '。', '；', '。\r\n']
         seperator = random.choice(seperators)
-        newText+=seperator
-        print(newText,end='',flush=True)
+        newText += seperator
+        print(newText, end='', flush=True)
 
         screenText = screenText + newText
         screenText = screenText + seperator
