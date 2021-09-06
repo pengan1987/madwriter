@@ -1,5 +1,10 @@
 Include
+include
 Lib
+bin
+lib
+lib64
+share
 Scripts
 pyvenv.cfg
 downloaded

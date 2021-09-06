@@ -1,3 +1,4 @@
+import sys
 import jieba.posseg as pseg
 import random
 import time
@@ -23,7 +24,7 @@ def screen_clear():
 
 def getArticleList():
     articles = []
-    path = "offline_data\\*.txt"
+    path = "offline_data/*.txt"
     for filename in glob.glob(path):
         with open(filename, 'r', encoding="utf-8") as file:
             head = [next(file) for x in range(7)]
@@ -95,9 +96,11 @@ while True:
         if (shape == 5):
             newText = noun1+verb1+noun2
 
-        seperators = ['', '，', '，', '，', '。', '。', '；', '。\n']
+        seperators = ['', '，', '，', '，', '。', '。', '；', '。\r\n']
         seperator = random.choice(seperators)
-        print(newText, end=seperator, flush=True)
+        newText+=seperator
+        print(newText,end='',flush=True)
+
         screenText = screenText + newText
         screenText = screenText + seperator
 
